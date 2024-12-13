@@ -56,10 +56,11 @@ export function Landing() {
             Herbert Kayky
           </h1>
           <p className="text-lg sm:text-xl mt-4 text-[#BEB7B7]">
-            "Eu vi coisas que vocês não imaginariam. Naves de ataque em chamas
-            ao largo de Órion. Eu vi raios-c brilharem na escuridão próximos ao
-            Portal de Tannhäuser. <br /> <br /> Todos esses momentos se perderão
-            no tempo, como lágrimas na chuva. <br /> Hora de morrer."
+            &quot;Eu vi coisas que vocês não imaginariam. Naves de ataque em
+            chamas ao largo de Órion. Eu vi raios-c brilharem na escuridão
+            próximos ao Portal de Tannhäuser. <br /> <br /> Todos esses momentos
+            se perderão no tempo, como lágrimas na chuva. <br /> Hora de
+            morrer.&quot;
           </p>
           <div className="flex gap-10">
             <button className="mt-10 text-lg rounded-full px-7 py-3 border-[3px] border-[#F56539] text-[#F56539] hover:text-black hover:bg-white hover:border-white transition-all">
