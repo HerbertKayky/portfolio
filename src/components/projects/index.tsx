@@ -12,19 +12,19 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "E-commerce App",
+    title: "Landing Page para Psicóloga",
     description:
-      "Aplicativo de e-commerce completo, com autenticação, carrinho de compras e integração com Stripe.",
-    image: "/ecommerce.png",
-    link: "https://ecommerce.com",
+      "Landing page desenvolvida para psicólogas, com foco em promover serviços de atendimento psicológico e construir uma presença online confiável. Com design intuitivo e espaço para depoimentos, agendamentos e informações sobre a profissional.",
+    image: "/psifolio.png",
+    link: "https://github.com/HerbertKayky/landing-page-0",
   },
   {
     id: 3,
-    title: "Blog Tech",
+    title: "Landing Page para Vendedor",
     description:
-      "Blog voltado para tecnologia, utilizando CMS para gerenciar conteúdos de forma eficiente.",
-    image: "/blog.png",
-    link: "https://blogtech.com",
+      "Landing page projetada para vendedores, com o objetivo de aumentar a visibilidade e as vendas. Serve como um portfólio interativo, permitindo mostrar produtos e serviços, capturar leads e estabelecer uma conexão direta com potenciais clientes",
+    image: "/moto.png",
+    link: "https://github.com/HerbertKayky/landing-page-1",
   },
 ];
 
