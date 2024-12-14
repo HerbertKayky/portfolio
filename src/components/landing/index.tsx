@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilepic from "/public/eu.jpeg";
+import profilepic from "/public/eu1.jpeg";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
