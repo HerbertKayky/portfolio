@@ -67,7 +67,7 @@ export function Landing() {
               <Link href="#about">Sobre Mim</Link>
             </button>
             <button className="mt-10 text-lg rounded-full px-10 py-3 border-[3px] border-[#F56539] bg-[#f56539] text-black hover:border-white hover:text-white hover:bg-transparent transition-all">
-              <span>Projetos</span>
+              <Link href="#projects">Projetos</Link>
             </button>
           </div>
         </div>
