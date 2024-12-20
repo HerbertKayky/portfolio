@@ -5,54 +5,38 @@ export function Education() {
   return (
     <section
       id="education"
-      className="bg-[#212121] text-[#BEB7B7] pt-2 min-h-screen"
+      className="bg-[#212121] text-[#BEB7B7] pt-20 min-h-screen"
     >
       <div className="container mx-auto px-5">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#F56539] mb-8">
-          Formação
-        </h2>
+        <h2 className="text-5xl font-bold text-[#F56539] mb-8">Formação</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-[#333333] rounded-lg shadow-lg p-6">
+            <div className="bg-[#613528] rounded-3xl shadow-lg p-6 hover:bg-[#8B422C] transition-all">
               <h3 className="text-2xl font-bold text-[#EAEAEA] mb-4">
-                Análise e Desenvolvimento de Sistemas
+                Graduação em Análise e Desenvolvimento de Sistemas
               </h3>
-              <p className="text-lg leading-7">
-                Formado pela{" "}
-                <span className="text-[#F56539] font-semibold">
-                  Uninassau - Caruaru
-                </span>
-                . Durante minha graduação, adquiri habilidades em
-                desenvolvimento de sistemas, resolução de problemas e inovação
-                tecnológica, me capacitando para atuar na área de tecnologia com
-                excelência.
-              </p>
+              <p className="text-lg leading-7 font-bold">UNINASSAU - Caruaru</p>
             </div>
 
-            <div className="bg-[#333333] rounded-lg shadow-lg p-6">
+            <div className="bg-[#613528] rounded-3xl shadow-lg p-6 hover:bg-[#8B422C] transition-all">
               <h3 className="text-xl font-bold text-[#EAEAEA] mb-2">
-                Curso de Next.js
+                NextJS do zero ao avançado na prática 2024
               </h3>
               <p className="text-lg">
-                Concluído na Udemy, este curso aprofundou meus conhecimentos em
-                desenvolvimento web com Next.js, abordando tópicos como
-                renderização do lado do servidor, rotas dinâmicas e otimização
-                de desempenho.
+                Udemy - Mateus Fragua (Sujeito Programador)
               </p>
             </div>
-            <div className="bg-[#333333] rounded-lg shadow-lg p-6">
+            <div className="bg-[#613528] rounded-3xl shadow-lg p-6 hover:bg-[#8B422C] transition-all">
               <h3 className="text-xl font-bold text-[#EAEAEA] mb-2">
-                Curso de React
+                React do Zero a Maestria (c/ hooks, router, API, Projetos)
               </h3>
               <p className="text-lg">
-                Também concluído na Udemy, este curso abrangeu fundamentos e
-                práticas avançadas do React, incluindo hooks, gerenciamento de
-                estado e construção de interfaces interativas.
+                Udemy - Matheus Battisti (Hora de codar)
               </p>
             </div>
           </div>
 
-          <div className="flex justify-center items-center">
+          <div className="justify-center items-center hidden sm:block ">
             <Image
               src={studyImg}
               width={1000}
