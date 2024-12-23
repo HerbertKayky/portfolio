@@ -12,7 +12,7 @@ const skills = [
   { name: "Figma", image: "/skills/figma.png" },
   { name: "JavaScript", image: "/skills/js.png" },
   { name: "CSS", image: "/skills/css.png" },
-  { name: "React", image: "/skills/react.webp" },
+  { name: "React", image: "/skills/react.png" },
   { name: "NextJS", image: "/skills/next.png" },
   { name: "HTML", image: "/skills/html.webp" },
   { name: "Prisma", image: "/skills/prisma.webp" },
