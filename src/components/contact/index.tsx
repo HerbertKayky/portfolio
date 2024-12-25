@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
+import { Footer } from "../footer";
 
 export function Contact() {
   return (
@@ -97,6 +98,7 @@ export function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }
