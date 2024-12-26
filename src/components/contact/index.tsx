@@ -7,9 +7,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#212121] text-[#BEB7B7] py-20 min-h-screen"
+      className="bg-[#212121] text-[#BEB7B7] pt-16 pb-3 min-h-screen flex flex-col"
     >
-      <div className="container mx-auto px-5">
+      <div className="container mx-auto px-5 flex-grow">
         <h2 className="text-6xl font-bold text-[#F56539] mb-12">Contato</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <form className="space-y-6">
