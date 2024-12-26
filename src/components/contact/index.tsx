@@ -2,12 +2,15 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 import { Footer } from "../footer";
+import Image from "next/image";
+import book from "/public/book.png";
+import laptop from "/public/laptop.png";
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#212121] text-[#BEB7B7] pt-16 pb-3 min-h-screen flex flex-col"
+      className="bg-[#212121] text-[#BEB7B7] pt-16 pb-3 min-h-screen flex flex-col relative"
     >
       <div className="container mx-auto px-5 flex-grow">
         <h2 className="text-6xl font-bold text-[#F56539] mb-12">Contato</h2>
@@ -67,7 +70,6 @@ export function Contact() {
           </form>
 
           <div className="flex flex-col items-center justify-center space-y-6">
-            <p className="text-lg text-center"></p>
             <Link
               href="https://wa.me/5581993296809"
               target="_blank"
@@ -98,6 +100,20 @@ export function Contact() {
           </div>
         </div>
       </div>
+
+      <div className="absolute bottom-5 right-5 space-x-3 hidden md:flex">
+        <Image
+          src={book}
+          alt="Book Icon 1"
+          className="w-24 h-24 animate-bounce"
+        />
+        <Image
+          src={laptop}
+          alt="Book Icon 2"
+          className="w-24 h-24 animate-bounce delay-200"
+        />
+      </div>
+
       <Footer />
     </section>
   );
