@@ -1,14 +1,24 @@
+"use client";
 import Image from "next/image";
 import profilepic from "/public/eu1.jpeg";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Landing() {
+  const { language, setLanguage } = useLanguage();
+
   return (
     <div className="flex w-full min-h-screen relative flex-col lg:flex-row">
       <div className="bg-gradient-to-r from-[#bb5a00] via-[#fd5d01f3] to-[#ff9900] w-full lg:w-1/2 flex flex-col justify-center items-center p-6">
         <div className="absolute top-6 left-10">
           <h1 className="italic underline text-2xl font-bold"></h1>
+          <button
+            className="mt-4 px-4 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition"
+            onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
+          >
+            {language === "pt" ? "Switch to English" : "Mudar para Português"}
+          </button>
         </div>
 
         <div className="flex rounded-full overflow-hidden mb-6">
@@ -51,7 +61,9 @@ export function Landing() {
 
       <div className="bg-[#212121] w-full lg:w-2/3 flex flex-col justify-center items-start p-6">
         <div className="px-6 sm:px-12 md:px-20 max-w-xl">
-          <h2 className="text-xl text-[#BEB7B7]">Desenvolvedor Web</h2>
+          <h2 className="text-xl text-[#BEB7B7]">
+            {language === "pt" ? "Desenvolvedor Web" : "Web Developer"}
+          </h2>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 text-[#EAEAEA]">
             Herbert Kayky
           </h1>
