@@ -68,18 +68,34 @@ export function Landing() {
             Herbert Kayky
           </h1>
           <p className="text-lg sm:text-xl mt-4 text-[#BEB7B7]">
-            &quot;Eu vi coisas que vocês não imaginariam. Naves de ataque em
-            chamas ao largo de Órion. Eu vi raios-c brilharem na escuridão
-            próximos ao Portal de Tannhäuser. <br /> <br /> Todos esses momentos
-            se perderão no tempo, como lágrimas na chuva. <br /> Hora de
-            morrer.&quot;
+            {language === "pt" ? (
+              <>
+                &quot;Eu vi coisas que vocês não imaginariam. Naves de ataque em
+                chamas ao largo de Órion. Eu vi raios-c brilharem na escuridão
+                próximos ao Portal de Tannhäuser. <br /> <br /> Todos esses
+                momentos se perderão no tempo, como lágrimas na chuva. <br />{" "}
+                Hora de morrer.&quot;
+              </>
+            ) : (
+              <>
+                &quot;I’ve seen things you people wouldn’t believe. Attack ships
+                on fire off the shoulder of Orion. I watched c-beams glitter in
+                the dark near the Tannhäuser Gate. <br /> <br /> All those
+                moments will be lost in time, like tears in rain. <br /> Time to
+                die.&quot;
+              </>
+            )}
           </p>
           <div className="flex gap-10">
             <button className="mt-10 text-lg rounded-full px-7 py-3 border-[3px] border-[#F56539] text-[#F56539] hover:text-black hover:bg-white hover:border-white transition-all">
-              <Link href="#about">Sobre Mim</Link>
+              <Link href="#about">
+                {language === "pt" ? "Sobre mim" : "About Me"}
+              </Link>
             </button>
             <button className="mt-10 text-lg rounded-full px-10 py-3 border-[3px] border-[#F56539] bg-[#f56539] text-black hover:border-white hover:text-white hover:bg-transparent transition-all">
-              <Link href="#projects">Projetos</Link>
+              <Link href="#projects">
+                {language === "pt" ? "Projetos" : "Projects"}
+              </Link>
             </button>
           </div>
         </div>
