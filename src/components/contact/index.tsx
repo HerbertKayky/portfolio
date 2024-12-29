@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
@@ -5,15 +6,20 @@ import { Footer } from "../footer";
 import Image from "next/image";
 import book from "/public/book.png";
 import laptop from "/public/laptop.png";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Contact() {
+  const { language } = useLanguage();
+
   return (
     <section
       id="contact"
       className="bg-[#212121] text-[#BEB7B7] pt-16 pb-3 min-h-screen flex flex-col relative"
     >
       <div className="container mx-auto px-5 flex-grow">
-        <h2 className="text-6xl font-bold text-[#F56539] mb-12">Contato</h2>
+        <h2 className="text-6xl font-bold text-[#F56539] mb-12">
+          {language === "pt" ? "Contato" : "Contact"}
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <form className="space-y-6">
             <div>
@@ -21,13 +27,13 @@ export function Contact() {
                 htmlFor="name"
                 className="block text-sm font-bold text-[#F56539] mb-2"
               >
-                Nome
+                {language === "pt" ? "Nome" : "Name"}
               </label>
               <input
                 type="text"
                 id="name"
                 className="w-full p-3 rounded-lg bg-transparent border-2 border-[#F56539] placeholder-[#BEB7B7] outline-none"
-                placeholder="Seu nome"
+                placeholder={language === "pt" ? "Seu nome" : "Your name"}
                 required
               />
             </div>
@@ -42,7 +48,7 @@ export function Contact() {
                 type="email"
                 id="email"
                 className="w-full p-3 rounded-lg bg-transparent border-2 border-[#F56539] placeholder-[#BEB7B7] outline-none"
-                placeholder="Seu e-mail"
+                placeholder={language === "pt" ? "Seu e-mail" : "Your email"}
                 required
               />
             </div>
@@ -51,12 +57,12 @@ export function Contact() {
                 htmlFor="message"
                 className="block text-sm font-bold text-[#F56539] mb-2"
               >
-                Mensagem
+                {language === "pt" ? "Mensagem" : "Message"}
               </label>
               <textarea
                 id="message"
                 className="w-full p-3 rounded-lg bg-transparent border-2 border-[#F56539] placeholder-[#BEB7B7] outline-none"
-                placeholder="Sua mensagem"
+                placeholder={language === "pt" ? "Mensagem" : "Message"}
                 required
               ></textarea>
             </div>
@@ -64,7 +70,7 @@ export function Contact() {
               type="submit"
               className="flex text-lg items-center px-5 py-3 bg-[#F56539] gap-3 text-black font-bold rounded-lg hover:bg-[#EAEAEA] hover:scale-110 transition-all duration-700"
             >
-              Enviar
+              {language === "pt" ? "Enviar" : "Send"}
               <FiSend size={25} />
             </button>
           </form>
