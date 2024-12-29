@@ -2,11 +2,11 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
-import { Footer } from "../footer";
 import Image from "next/image";
 import book from "/public/book.png";
 import laptop from "/public/laptop.png";
 import { useLanguage } from "@/context/LanguageContext";
+import Footer from "../footer";
 
 export function Contact() {
   const { language } = useLanguage();
