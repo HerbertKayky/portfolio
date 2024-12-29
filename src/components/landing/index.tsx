@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import profilepic from "/public/eu1.jpeg";
+import { PiTranslateFill } from "react-icons/pi";
+
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
@@ -10,14 +12,13 @@ export function Landing() {
 
   return (
     <div className="flex w-full min-h-screen relative flex-col lg:flex-row">
-      <div className="bg-gradient-to-r from-[#bb5a00] via-[#fd5d01f3] to-[#ff9900] w-full lg:w-1/2 flex flex-col justify-center items-center p-6">
-        <div className="absolute top-6 left-10">
-          <h1 className="italic underline text-2xl font-bold"></h1>
+      <div className="bg-gradient-to-r from-[#bb5a00] via-[#fd5d01f3] to-[#ff9900] w-full lg:w-1/2 flex flex-col justify-center items-center p-6 relative">
+        <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
           <button
-            className="mt-4 px-4 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition"
+            className="px-2 py-1 border border-white text-white rounded hover:bg-white hover:text-black transition"
             onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
           >
-            {language === "pt" ? "Switch to English" : "Mudar para Português"}
+            <PiTranslateFill size={35} />
           </button>
         </div>
 
@@ -47,7 +48,6 @@ export function Landing() {
           >
             <FaLinkedin size={42} />
           </Link>
-
           <Link
             href="https://www.instagram.com/kayky.tsx"
             target="_blank"
