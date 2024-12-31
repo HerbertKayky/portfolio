@@ -16,6 +16,7 @@ const skills = [
   { name: "NextJS", image: "/skills/next.png" },
   { name: "HTML", image: "/skills/html.webp" },
   { name: "Prisma", image: "/skills/prisma.webp" },
+  { name: "Git", image: "/skills/git.png" },
 ];
 
 export function Skills() {
