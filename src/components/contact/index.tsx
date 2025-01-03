@@ -21,7 +21,11 @@ export function Contact() {
           {language === "pt" ? "Contato" : "Contact"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <form className="space-y-6">
+          <form
+            action="https://formspree.io/f/mlddogkg"
+            method="POST"
+            className="space-y-6"
+          >
             <div>
               <label
                 htmlFor="name"
@@ -31,6 +35,7 @@ export function Contact() {
               </label>
               <input
                 type="text"
+                name="name"
                 id="name"
                 className="w-full p-3 rounded-lg bg-transparent border-2 border-[#F56539] placeholder-[#BEB7B7] outline-none"
                 placeholder={language === "pt" ? "Seu nome" : "Your name"}
@@ -46,6 +51,7 @@ export function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
                 id="email"
                 className="w-full p-3 rounded-lg bg-transparent border-2 border-[#F56539] placeholder-[#BEB7B7] outline-none"
                 placeholder={language === "pt" ? "Seu e-mail" : "Your email"}
@@ -60,6 +66,7 @@ export function Contact() {
                 {language === "pt" ? "Mensagem" : "Message"}
               </label>
               <textarea
+                name="message"
                 id="message"
                 className="w-full p-3 rounded-lg bg-transparent border-2 border-[#F56539] placeholder-[#BEB7B7] outline-none"
                 placeholder={language === "pt" ? "Mensagem" : "Message"}
