@@ -28,7 +28,7 @@ const projectsData = [
       en: "Landing page developed for psychologists, focused on promoting psychological care services and building a reliable online presence. Featuring an intuitive design with space for testimonials, appointments, and information about the professional.",
     },
     image: "/psifolio.png",
-    link: "https://github.com/HerbertKayky/landing-page-0",
+    link: "https://psiport.vercel.app/",
   },
   {
     id: 3,
