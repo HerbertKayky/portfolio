@@ -86,17 +86,28 @@ export function Landing() {
               </>
             )}
           </p>
-          <div className="flex gap-10">
-            <button className="mt-10 text-lg rounded-full px-7 py-3 border-[3px] border-[#F56539] text-[#F56539] hover:text-black hover:bg-white hover:border-white transition-all">
-              <Link href="#about">
-                {language === "pt" ? "Sobre mim" : "About Me"}
-              </Link>
-            </button>
-            <button className="mt-10 text-lg rounded-full px-10 py-3 border-[3px] border-[#F56539] bg-[#f56539] text-black hover:border-white hover:text-white hover:bg-transparent transition-all">
-              <Link href="#projects">
-                {language === "pt" ? "Projetos" : "Projects"}
-              </Link>
-            </button>
+          <div className="flex flex-wrap gap-6 mt-10">
+            <Link
+              href="#about"
+              className="text-base sm:text-lg rounded-full px-6 py-2 border-2 border-[#F56539] text-[#F56539] hover:text-black hover:bg-white hover:border-white transition-all"
+            >
+              {language === "pt" ? "Sobre mim" : "About Me"}
+            </Link>
+            <Link
+              href="#projects"
+              className="text-base sm:text-lg rounded-full px-8 py-2 border-2 border-[#F56539] bg-[#F56539] text-black hover:border-white hover:text-white hover:bg-transparent transition-all"
+            >
+              {language === "pt" ? "Projetos" : "Projects"}
+            </Link>
+            <Link
+              href="/cv.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base sm:text-lg rounded-full px-6 py-2 border-2 border-[#F56539] text-[#F56539] hover:text-black hover:bg-white hover:border-white transition-all"
+            >
+              {language === "pt" ? "Baixar CV" : "Download CV"}
+            </Link>
           </div>
         </div>
       </div>
