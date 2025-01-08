@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { motion } from "framer-motion";
 
 const projectsData = [
   {
@@ -58,9 +59,16 @@ export default function Projects() {
           {language === "pt" ? "Meus Projetos" : "My Projects"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectsData.map((project) => (
-            <div
+          {projectsData.map((project, index) => (
+            <motion.div
               key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.4,
+              }}
+              viewport={{ once: true }}
               className="bg-[#333333] rounded-lg shadow-lg overflow-hidden"
             >
               <Link href={project.link} target="_blank">
@@ -89,7 +97,7 @@ export default function Projects() {
                   {language === "pt" ? "Ver projeto" : "View Project"}
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
