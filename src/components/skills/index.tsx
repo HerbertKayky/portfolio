@@ -21,7 +21,7 @@ const skills = [
 
 export function Skills() {
   return (
-    <div className="bg-[#212121] text-center pb-12">
+    <div className="bg-[#212121] text-center py-12">
       <h1 className="text-5xl font-bold text-[#F56539] mb-14">Skills</h1>
       <Swiper
         spaceBetween={20}

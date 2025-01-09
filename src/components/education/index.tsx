@@ -16,7 +16,7 @@ export function Education() {
   return (
     <section
       id="education"
-      className="bg-[#212121] text-[#BEB7B7] min-h-screen"
+      className="bg-[#212121] text-[#BEB7B7] pb-36"
     >
       <div className="container mx-auto px-5">
         <h2 className="text-5xl font-bold text-[#F56539] mb-12 lg:pt-0 pt-12">
