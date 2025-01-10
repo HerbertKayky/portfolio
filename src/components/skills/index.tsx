@@ -1,6 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
@@ -20,6 +21,11 @@ const skills = [
 ];
 
 export function Skills() {
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
     <div className="bg-[#212121] text-center py-12">
       <h1 className="text-5xl font-bold text-[#F56539] mb-14">Skills</h1>
@@ -37,14 +43,21 @@ export function Skills() {
       >
         {skills.map((skill, index) => (
           <SwiperSlide key={index} className="flex flex-col items-center p-4">
-            <div className="p-4 rounded-lg shadow-[0_0_12px_2px_rgba(245,101,57,0.7)] hover:scale-110 transition-transform duration-300">
+            <motion.div
+              className="p-4 rounded-lg shadow-[0_0_12px_2px_rgba(245,101,57,0.7)] hover:scale-110 transition-transform duration-300"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={skillVariants}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <img
                 src={skill.image}
                 alt={skill.name}
                 className="w-16 h-16 mx-auto object-contain"
               />
               <p className="text-[#EAEAEA] font-bold mt-4">{skill.name}</p>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
