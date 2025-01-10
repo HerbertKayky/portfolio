@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import book from "/public/book.png";
 import laptop from "/public/laptop.png";
 import { useLanguage } from "@/context/LanguageContext";
@@ -11,20 +12,36 @@ import Footer from "../footer";
 export function Contact() {
   const { language } = useLanguage();
 
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <section
+    <motion.section
       id="contact"
       className="bg-[#212121] text-[#BEB7B7] pt-16 pb-3 min-h-screen flex flex-col relative"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
     >
       <div className="container mx-auto px-5 flex-grow">
-        <h2 className="text-6xl font-bold text-[#F56539] mb-12">
+        <motion.h2
+          className="text-6xl font-bold text-[#F56539] mb-12"
+          variants={fadeInVariants}
+        >
           {language === "pt" ? "Contato" : "Contact"}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <form
+        </motion.h2>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+          variants={fadeInVariants}
+        >
+          <motion.form
             action="https://formspree.io/f/mlddogkg"
             method="POST"
             className="space-y-6"
+            variants={fadeInVariants}
           >
             <div>
               <label
@@ -80,9 +97,12 @@ export function Contact() {
               {language === "pt" ? "Enviar" : "Send"}
               <FiSend size={25} />
             </button>
-          </form>
+          </motion.form>
 
-          <div className="flex flex-col items-center justify-center space-y-6">
+          <motion.div
+            className="flex flex-col items-center justify-center space-y-6"
+            variants={fadeInVariants}
+          >
             <Link
               href="https://wa.me/5581993296809"
               target="_blank"
@@ -110,11 +130,16 @@ export function Contact() {
               <FaGithub size={24} />
               <span className="font-bold">Github</span>
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className="absolute bottom-5 right-5 space-x-3 hidden md:flex">
+      <motion.div
+        className="absolute bottom-5 right-5 space-x-3 hidden md:flex"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <Image
           src={book}
           alt="Book Icon 1"
@@ -125,9 +150,9 @@ export function Contact() {
           alt="Book Icon 2"
           className="w-24 h-24 animate-bounce delay-200"
         />
-      </div>
+      </motion.div>
 
       <Footer />
-    </section>
+    </motion.section>
   );
 }
