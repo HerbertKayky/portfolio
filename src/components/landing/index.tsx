@@ -6,9 +6,12 @@ import { PiTranslateFill } from "react-icons/pi";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { LuMessageCircleWarning } from "react-icons/lu";
+import { useState } from "react";
 
 export function Landing() {
   const { language, setLanguage } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="flex w-full min-h-screen relative flex-col lg:flex-row">
@@ -60,6 +63,15 @@ export function Landing() {
       </div>
 
       <div className="bg-[#212121] w-full lg:w-2/3 flex flex-col justify-center items-start p-6">
+        <div className="absolute top-6">
+          <button
+            className="px-2 py-1 border border-white text-white rounded hover:bg-white hover:text-black transition"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <LuMessageCircleWarning size={35} />
+          </button>
+        </div>
+
         <div className="px-6 sm:px-12 md:px-20 max-w-xl">
           <h2 className="text-xl text-[#BEB7B7]">
             {language === "pt" ? "Desenvolvedor Web" : "Web Developer"}
@@ -111,6 +123,34 @@ export function Landing() {
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-orange-500 rounded-lg shadow-lg p-6 text-center max-w-sm w-full">
+            <h2 className="text-xl font-semibold mb-4 text-[#eaeaea] hover:text-white relative inline-block group">
+              <span className="relative z-10">
+                {language === "pt"
+                  ? "Sobre este Projeto"
+                  : "About this Project"}
+              </span>
+              <span className="absolute inset-0 bg-[#54b3d6] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out z-0"></span>
+            </h2>
+
+            <p className="text-white mb-6">
+              {language === "pt"
+                ? "Este projeto foi desenvolvido utilizando Next.js 14 com Tailwind CSS para estilização. O portfólio foi criado com o objetivo de apresentar uma coleção de trabalhos e projetos que desenvolvi ao longo da minha jornada como desenvolvedor."
+                : "This project was developed using Next.js 14 with Tailwind CSS for styling. The portfolio was created to showcase a collection of work and projects I have developed throughout my journey as a developer."}
+            </p>
+
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="bg-[#212121] text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
+            >
+              {language === "pt" ? "Fechar" : "Close"}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
